@@ -22,28 +22,3 @@ CRITICAL
 1. Отображается кнопка test_data[1]
 2. В блоке test_data[1] есть 6 карточек - test_data[2], test_data[3],
 test_data[4], test_data[5], test_data[6], test_data[7]
-
-
-
-
-    Title
-Проверка наличия карточек в блоке 'Big Autumn Sale' на странице https://stepik.org/catalog
-
-    Test data
-
-    Severity
-CRITICAL
-
-    Preconditions
-В бразуере открыт адрес https://stepik.org/catalog
-
-    Steps
-1. Выбрать локаль 'Русский'
-
-    Expected result
-1. Отображается блок 'Big Autumn Sale'
-2. В блоке Online courses есть вкладка - 'Веб-разработка'
-3. Во вкладке 'Веб-разработка' есть 6 карточек -
-'Профессия веб верстальщик. Web разработка и создание сайтов 2022', 'Веб дизайн в Figma. Анимации и Главные правила "Юзабилити".',
- 'Теория цифрового дизайна. Веб дизайн, фотография, композиция!', 'Верстка и веб-разработка сайтов. Продвинутый уровень Web Develop',
-'Верстка и веб разработка сайтов 2022 - с нуля! Web development', 'WEB программирование на ASP.NET Core. ВСЕ САМ'
