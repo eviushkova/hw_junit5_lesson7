@@ -22,3 +22,25 @@ CRITICAL
 1. Отображается кнопка test_data[1]
 2. В блоке test_data[1] есть 6 карточек - test_data[2], test_data[3],
 test_data[4], test_data[5], test_data[6], test_data[7]
+
+
+---------------------------------------------------------------------------
+Test data
+['Kotlin', 'Android профессиональный уровень (Kotlin)']
+
+['SQL', 'SQL для всех']
+
+Title
+Проверка наличия курса test_data[{1}] в каталоге сайта https://stepik.org/catalog по запросу test_data[0]
+
+Severity
+BLOCKER, FEATURE
+
+Preconditions
+В бразуере открыт адрес https://stepik.org/catalog
+
+Steps
+1. В строке поиска ввести запрос test_data[0]
+
+Expected result
+1. Отображаются курсы test_data[1]

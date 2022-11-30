@@ -3,8 +3,10 @@ package guru.qa;
 import com.codeborne.selenide.collections.ContainExactTextsCaseSensitive;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Tag;
+import org.junit.jupiter.api.Tags;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
+import org.junit.jupiter.params.provider.CsvSource;
 import org.junit.jupiter.params.provider.MethodSource;
 
 import java.util.List;
@@ -41,5 +43,18 @@ public class StepikTest {
         $$(".drop-down-content li button").find(text(locale)).click();
         $(".catalog-block-full-course-lists__tablist li button").shouldHave(text(expectedButton));
         $$(".course-card__title").shouldHave(new ContainExactTextsCaseSensitive(cards));
+    }
+
+
+    @CsvSource({
+            "Kotlin, Android профессиональный уровень (Kotlin)",
+            "SQL, SQL для всех"
+    })
+    @ParameterizedTest(name = "Проверка наличия курса {1} в каталоге сайта https://stepik.org/catalog по запросу {0}")
+    @Tags({@Tag("BLOCKER"), @Tag("FEATURE")})
+    void stepikSearchCourses(String keyword, String course) {
+
+        $(".search-form__input ").setValue(keyword).pressEnter();
+        $(".catalog-block__content").shouldHave(text(course));
     }
 }
