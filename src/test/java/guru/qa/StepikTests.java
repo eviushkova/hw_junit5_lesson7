@@ -15,7 +15,7 @@ import java.util.stream.Stream;
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.*;
 
-public class StepikTest {
+public class StepikTests {
 
     @BeforeEach
     void setUp() {
