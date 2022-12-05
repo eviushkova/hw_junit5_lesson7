@@ -1,6 +1,6 @@
 package guru.qa;
 
-import com.codeborne.selenide.collections.ContainExactTextsCaseSensitive;
+import com.codeborne.selenide.CollectionCondition;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Tags;
@@ -26,10 +26,15 @@ public class StepikTests {
     static Stream<Arguments> stepikCatalogTest() {
 
         return Stream.of(
-                Arguments.of("English", "Editors' choice", List.of("Ace Your Next Coding Interview by Learning Algorithms", "LaunchCode's Discovery",
-                        "Data Structures", "Bioinformatics Algorithms: An Active Learning Approach", "Linear Algebra: Problems and Methods", "Atomic Kotlin")),
-                Arguments.of("Русский", "Веб-разработка", List.of("Профессия веб верстальщик. Web разработка и создание сайтов 2022", "Веб дизайн в Figma. Анимации и Главные правила \"Юзабилити\".",
-                        "Теория цифрового дизайна. Веб дизайн, фотография, композиция!", "Верстка и веб-разработка сайтов. Продвинутый уровень Web Develop", "Верстка и веб разработка сайтов 2022 - с нуля! Web development",
+                Arguments.of("English", "Editors' choice", List.of("Ace Your Next Coding Interview by Learning Algorithms",
+                        "LaunchCode's Discovery",
+                        "Data Structures",
+                        "Bioinformatics Algorithms: An Active Learning Approach",
+                        "Linear Algebra: Problems and Methods", "Atomic Kotlin")),
+                Arguments.of("Русский", "Веб-разработка", List.of("Профессия веб верстальщик. Web разработка и создание сайтов 2022",
+                        "Веб дизайн в Figma. Анимации и Главные правила \"Юзабилити\".",
+                        "Теория цифрового дизайна. Веб дизайн, фотография, композиция!",
+                        "Верстка и веб-разработка сайтов. Продвинутый уровень Web Develop", "Верстка и веб разработка сайтов 2022 - с нуля! Web development",
                         "WEB программирование на ASP.NET Core. ВСЕ САМ"))
         );
     }
@@ -42,7 +47,7 @@ public class StepikTests {
         $(".st-button_style_none").click();
         $$(".drop-down-content li button").find(text(locale)).click();
         $(".catalog-block-full-course-lists__tablist li button").shouldHave(text(expectedButton));
-        $$(".course-card__title").shouldHave(new ContainExactTextsCaseSensitive(cards));
+        $$(".course-card__title").shouldHave(CollectionCondition.containExactTextsCaseSensitive(cards));
     }
 
 
